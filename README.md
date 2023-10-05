@@ -13,6 +13,7 @@ Quick Sort is a sorting algorithm based on the divide-and-conquer strategy. It w
 
 4. Combine Sub-arrays: No explicit combining step is needed, as the array is sorted in place by rearranging the elements during the partitioning step<br>
 
+
 **Sample Code**<br>
 
 ```
