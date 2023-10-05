@@ -3,7 +3,8 @@ coursework for data structures<br>
 
 **QUICK SORT**<br>
 **What it is**:<br>
-Quick Sort is a sorting algorithm based on the divide-and-conquer strategy. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.<br>
+Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array an element called a pivot is selected. All elements smaller than the pivot are moved before it and all greater elements are moved after it. This can be done efficiently in linear time and in-place. The lesser and greater sublists are then recursively sorted. Efficient implementations of quicksort (with in-place partitioning) are typically unstable sorts and somewhat complex, but are among the fastest sorting algorithms in practice. Together with its modest O(log n) space usage, quicksort is one of the most popular sorting algorithms and is available in many standard programming libraries. The most complex issue in quicksort is choosing a good pivot element; consistently poor choices of pivots can result in drastically slower O(n²) performance, if at each step the median is chosen as the pivot then the algorithm works in.<br>
+
 **How it works**<br>
 1. Choose a Pivot: Select a pivot element from the array. The choice of the pivot can greatly influence the algorithm's performance. Common strategies include selecting the first, last, middle, or a random element as the pivot.<br>
 
@@ -13,40 +14,12 @@ Quick Sort is a sorting algorithm based on the divide-and-conquer strategy. It w
 
 4. Combine Sub-arrays: No explicit combining step is needed, as the array is sorted in place by rearranging the elements during the partitioning step<br>
 
-
-**Sample Code**<br>
-
-```
-
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr  # Base case: already sorted
-    
-    pivot = arr[len(arr) // 2]  # Choose pivot (middle element)
-    left = [x for x in arr if x < pivot]  # Elements less than pivot
-    middle = [x for x in arr if x == pivot]  # Elements equal to pivot
-    right = [x for x in arr if x > pivot]  # Elements greater than pivot
-    
-    return quick_sort(left) + middle + quick_sort(right)  # Recur on sub-arrays and combine
-
-# Example usage
-input_array = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
-sorted_array = quick_sort(input_array)
-print("Sorted Array:", sorted_array)
-
-```
-#explanation of code:
-
-1. The function quick_sort takes an input list arr.<br>
-2. If the length of arr is 1 or less, it's already sorted, so the function returns arr as it is the base case.<br>
-3. The pivot element is chosen as the middle element of the input array.<br>
-4. The list comprehension is used to create three sub-arrays: left, middle, and right, which contain elements less than, equal to, and greater than the pivot, respectively.<br>
-5. The function recursively calls itself on the left and right sub-arrays and concatenates the sorted sub-arrays with the middle array.<br>
-6. The sorted array is returned.<br>
-
 **Analysis**
 1. Time Complexity: O(n log n) on average, O(n^2) in the worst case.<br>
 2. Space Complexity: O(log n) auxiliary space for recursive calls.<br>
+
+**COUNTING SORT**
+
 
 
 
